@@ -2,7 +2,6 @@ package dao.utente;
 
 import java.util.List;
 
-import dao.IBaseDao;
 import jakarta.persistence.EntityManager;
 import model.Utente;
 
