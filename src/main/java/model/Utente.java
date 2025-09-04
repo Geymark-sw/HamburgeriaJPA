@@ -6,7 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import util.Ruolo;
+import util.RuoloUtente;
 
 @Entity
 @Table(name = "utente")
@@ -30,10 +30,10 @@ public class Utente {
 	private String password;
 	
 	@Column(name = "ruolo")
-	private Ruolo ruolo;
+	private RuoloUtente ruolo;
 	
 	
-	public Utente(long id_utente, String nome, String cognome, String email, String password, Ruolo ruolo) {
+	public Utente(long id_utente, String nome, String cognome, String email, String password, RuoloUtente ruolo) {
 		super();
 		this.id_utente = id_utente;
 		this.nome = nome;
@@ -94,12 +94,12 @@ public class Utente {
 	}
 
 
-	public Ruolo getRuolo() {
+	public RuoloUtente getRuolo() {
 		return ruolo;
 	}
 
 
-	public void setRuolo(Ruolo ruolo) {
+	public void setRuolo(RuoloUtente ruolo) {
 		this.ruolo = ruolo;
 	}
 

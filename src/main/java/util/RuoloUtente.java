@@ -1,6 +1,6 @@
 package util;
 
-public enum Ruolo {
+public enum RuoloUtente {
 	
 	cliente, staff, admin
 	
