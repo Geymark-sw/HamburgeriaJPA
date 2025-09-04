@@ -3,14 +3,19 @@ package dao.utente;
 import java.util.List;
 
 import dao.IBaseDao;
+import jakarta.persistence.EntityManager;
+import model.Utente;
 
 public class UtenteDao implements IBaseDao{
 	
+	private final EntityManager entityManager;
 	
-	
+	public UtenteDao(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
 
 	@Override
-	public List findAll() {
+	public List<Utente> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
