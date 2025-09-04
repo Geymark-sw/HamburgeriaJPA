@@ -6,7 +6,7 @@ import dao.IBaseDao;
 import jakarta.persistence.EntityManager;
 import model.Utente;
 
-public class UtenteDao implements IBaseDao{
+public class UtenteDao implements IUtenteDao{
 	
 	private final EntityManager entityManager;
 	
@@ -16,32 +16,30 @@ public class UtenteDao implements IBaseDao{
 
 	@Override
 	public List<Utente> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.entityManager.createQuery("FROM utente", Utente.class).getResultList();
 	}
 
 	@Override
-	public Object findById(Object id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Utente findById(Long id) {
+		return this.entityManager.find(Utente.class, id);
 	}
 
 	@Override
-	public boolean persist(Object elemento) {
-		// TODO Auto-generated method stub
-		return false;
+	public void persist(Utente elemento) {
+		this.entityManager.persist(elemento);
 	}
 
 	@Override
-	public Object merge(Object elemento) {
-		// TODO Auto-generated method stub
-		return null;
+	public Utente merge(Utente elemento) {
+		return this.entityManager.merge(elemento);
 	}
 
 	@Override
-	public boolean delete(Object daCancellare) {
-		// TODO Auto-generated method stub
-		return false;
+	public void remove(Utente daCancellare) {
+		this.entityManager.remove(daCancellare);
 	}
+
+	
+
 
 }

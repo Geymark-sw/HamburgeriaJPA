@@ -2,12 +2,12 @@ package dao;
 
 import java.util.List;
 
-public interface IBaseDao <T, Id> {
+public interface IBaseDao <T, ID> {
 	
 	List<T> findAll();
-	T findById(Id id);
-	boolean persist(T elemento);
+	T findById(ID id);
+	void persist(T elemento);
 	T merge(T elemento);
-	boolean delete(T daCancellare);
+	void remove(T daCancellare);
 
 }
