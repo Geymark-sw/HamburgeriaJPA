@@ -1,0 +1,3 @@
+dao\IBaseDao.class
+util\JPAUtil.class
+dao\utente\UtenteDao.class
