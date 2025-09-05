@@ -28,6 +28,20 @@ public class Prodotto {
 	
 	@Column(name = "tipo")
 	private TipoProdotto tipo;
+	
+	
+
+	public Prodotto() {
+		super();
+	}
+
+	public Prodotto(String nome, String descrizione, float prezzo, TipoProdotto tipo) {
+		super();
+		this.nome = nome;
+		this.descrizione = descrizione;
+		this.prezzo = prezzo;
+		this.tipo = tipo;
+	}
 
 	public Prodotto(long id_prodotto, String nome, String descrizione, float prezzo, TipoProdotto tipo) {
 		super();

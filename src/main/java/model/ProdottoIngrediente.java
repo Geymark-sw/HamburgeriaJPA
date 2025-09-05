@@ -29,6 +29,28 @@ public class ProdottoIngrediente {
 	
 	@Column(name = "quantita_ingrediente")
 	private int quantita_ingrediente;
+	
+	
+
+	public ProdottoIngrediente() {
+		super();
+	}
+
+	public ProdottoIngrediente(Prodotto prodotto, Ingrediente ingrediente, int quantita_ingrediente) {
+		super();
+		this.prodotto = prodotto;
+		this.ingrediente = ingrediente;
+		this.quantita_ingrediente = quantita_ingrediente;
+	}
+
+	public ProdottoIngrediente(long id_prodotto_ingrediente, Prodotto prodotto, Ingrediente ingrediente,
+			int quantita_ingrediente) {
+		super();
+		this.id_prodotto_ingrediente = id_prodotto_ingrediente;
+		this.prodotto = prodotto;
+		this.ingrediente = ingrediente;
+		this.quantita_ingrediente = quantita_ingrediente;
+	}
 
 	public long getId_prodotto_ingrediente() {
 		return id_prodotto_ingrediente;

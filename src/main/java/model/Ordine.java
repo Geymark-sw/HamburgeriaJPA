@@ -37,6 +37,20 @@ public class Ordine {
 	
 	@Column(name = "totale")
 	private float totale;
+	
+	
+
+	public Ordine() {
+		super();
+	}
+
+	public Ordine(Utente utente, LocalDateTime istante_ordine, StatoOrdine stato_ordine, float totale) {
+		super();
+		this.utente = utente;
+		this.istante_ordine = istante_ordine;
+		this.stato_ordine = stato_ordine;
+		this.totale = totale;
+	}
 
 	public Ordine(long id_ordine, Utente utente, LocalDateTime istante_ordine, StatoOrdine stato_ordine, float totale) {
 		super();

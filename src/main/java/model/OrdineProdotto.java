@@ -29,6 +29,27 @@ public class OrdineProdotto {
 	
 	@Column(name = "quantita_prodotto")
 	private int quantita_prodotto;
+	
+	
+
+	public OrdineProdotto() {
+		super();
+	}
+
+	public OrdineProdotto(Ordine ordine, Prodotto prodotto, int quantita_prodotto) {
+		super();
+		this.ordine = ordine;
+		this.prodotto = prodotto;
+		this.quantita_prodotto = quantita_prodotto;
+	}
+
+	public OrdineProdotto(long id_ordine_prodotto, Ordine ordine, Prodotto prodotto, int quantita_prodotto) {
+		super();
+		this.id_ordine_prodotto = id_ordine_prodotto;
+		this.ordine = ordine;
+		this.prodotto = prodotto;
+		this.quantita_prodotto = quantita_prodotto;
+	}
 
 	public long getId_ordine_prodotto() {
 		return id_ordine_prodotto;

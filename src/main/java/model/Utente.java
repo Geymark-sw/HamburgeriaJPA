@@ -15,7 +15,7 @@ public class Utente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_utente")
-	private long id_utente;
+	private Long id_utente;
 	
 	@Column(name = "nome")
 	private String nome;
@@ -33,6 +33,22 @@ public class Utente {
 	private RuoloUtente ruolo;
 	
 	
+	
+	public Utente() {
+		super();
+	}
+
+
+	public Utente(String nome, String cognome, String email, String password, RuoloUtente ruolo) {
+		super();
+		this.nome = nome;
+		this.cognome = cognome;
+		this.email = email;
+		this.password = password;
+		this.ruolo = ruolo;
+	}
+
+
 	public Utente(long id_utente, String nome, String cognome, String email, String password, RuoloUtente ruolo) {
 		super();
 		this.id_utente = id_utente;
@@ -44,12 +60,12 @@ public class Utente {
 	}
 
 
-	public long getId_utente() {
+	public Long getId_utente() {
 		return id_utente;
 	}
 
 
-	public void setId_utente(long id_utente) {
+	public void setId_utente(Long id_utente) {
 		this.id_utente = id_utente;
 	}
 

@@ -14,18 +14,37 @@ public class Ingrediente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_ingrediente")
-	private long id_ingrediente;
+	private Long id_ingrediente;
 	
 	@Column(name = "nome")
 	String nome;
 	
 	@Column(name = "disponibile")
 	boolean disponibile;
+	
+	public Ingrediente() {
+		
+	}
 
 	public Ingrediente(String nome, boolean disponibile) {
 		super();
 		this.nome = nome;
 		this.disponibile = disponibile;
+	}
+
+	public Ingrediente(Long id_ingrediente, String nome, boolean disponibile) {
+		super();
+		this.id_ingrediente = id_ingrediente;
+		this.nome = nome;
+		this.disponibile = disponibile;
+	}
+
+	public Long getId_ingrediente() {
+		return id_ingrediente;
+	}
+
+	public void setId_ingrediente(Long id_ingrediente) {
+		this.id_ingrediente = id_ingrediente;
 	}
 
 	public String getNome() {
