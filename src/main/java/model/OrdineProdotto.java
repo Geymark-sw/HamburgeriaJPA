@@ -1,3 +1,4 @@
+
 package model;
 
 import jakarta.persistence.Column;
@@ -13,24 +14,22 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "ordine_prodotto")
 public class OrdineProdotto {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_ordine_prodotto")
 	private long id_ordine_prodotto;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_ordine")
 	private Ordine ordine;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_prodotto")
 	private Prodotto prodotto;
-	
+
 	@Column(name = "quantita_prodotto")
 	private int quantita_prodotto;
-	
-	
 
 	public OrdineProdotto() {
 		super();
@@ -88,7 +87,5 @@ public class OrdineProdotto {
 		return "OrdineProdotto [id_ordine_prodotto=" + id_ordine_prodotto + ", ordine=" + ordine + ", prodotto="
 				+ prodotto + ", quantita_prodotto=" + quantita_prodotto + "]";
 	}
-	
-	
-	
+
 }

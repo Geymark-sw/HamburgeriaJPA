@@ -1,10 +1,14 @@
 package model;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import util.RuoloUtente;
 
@@ -32,6 +36,9 @@ public class Utente {
 	@Column(name = "ruolo")
 	private RuoloUtente ruolo;
 	
+	@OneToMany(mappedBy = "utente", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Ordine> ordini;
+	
 	
 	
 	public Utente() {
@@ -39,17 +46,19 @@ public class Utente {
 	}
 
 
-	public Utente(String nome, String cognome, String email, String password, RuoloUtente ruolo) {
+	public Utente(String nome, String cognome, String email, String password, RuoloUtente ruolo, List<Ordine> ordini) {
 		super();
 		this.nome = nome;
 		this.cognome = cognome;
 		this.email = email;
 		this.password = password;
 		this.ruolo = ruolo;
+		this.ordini = ordini;
+		
 	}
 
 
-	public Utente(long id_utente, String nome, String cognome, String email, String password, RuoloUtente ruolo) {
+	public Utente(long id_utente, String nome, String cognome, String email, String password, RuoloUtente ruolo, List<Ordine> ordini) {
 		super();
 		this.id_utente = id_utente;
 		this.nome = nome;
@@ -57,6 +66,7 @@ public class Utente {
 		this.email = email;
 		this.password = password;
 		this.ruolo = ruolo;
+		this.ordini = ordini;
 	}
 
 
@@ -117,6 +127,16 @@ public class Utente {
 
 	public void setRuolo(RuoloUtente ruolo) {
 		this.ruolo = ruolo;
+	}
+
+
+	public List<Ordine> getOrdini() {
+		return ordini;
+	}
+
+
+	public void setOrdini(List<Ordine> ordini) {
+		this.ordini = ordini;
 	}
 
 

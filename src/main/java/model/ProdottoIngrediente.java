@@ -83,6 +83,8 @@ public class ProdottoIngrediente {
 	public void setQuantita_ingrediente(int quantita_ingrediente) {
 		this.quantita_ingrediente = quantita_ingrediente;
 	}
+	
+	
 
 	@Override
 	public String toString() {

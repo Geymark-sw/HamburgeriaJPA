@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,7 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -24,7 +26,7 @@ public class Ordine {
 	@Column(name = "id_ordine")
 	private long id_ordine;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_utente")
 	private Utente utente;
 	
@@ -37,6 +39,9 @@ public class Ordine {
 	
 	@Column(name = "totale")
 	private float totale;
+	
+	@OneToMany(mappedBy = "ordine")
+	private Set<Prodotto> prodotti;
 	
 	
 

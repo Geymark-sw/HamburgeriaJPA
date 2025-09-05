@@ -1,10 +1,13 @@
 package model;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import util.TipoProdotto;
 
@@ -29,27 +32,37 @@ public class Prodotto {
 	@Column(name = "tipo")
 	private TipoProdotto tipo;
 	
+	@OneToMany(mappedBy = "prodotto")
+	private Set<Ordine> ordini;
+	
+	@OneToMany(mappedBy = "prodotto")
+	private Set<Ingrediente> ingredienti;
+	
 	
 
 	public Prodotto() {
 		super();
 	}
 
-	public Prodotto(String nome, String descrizione, float prezzo, TipoProdotto tipo) {
+	public Prodotto(String nome, String descrizione, float prezzo, TipoProdotto tipo, Set<Ordine> ordini, Set<Ingrediente> ingredienti) {
 		super();
 		this.nome = nome;
 		this.descrizione = descrizione;
 		this.prezzo = prezzo;
 		this.tipo = tipo;
+		this.ordini = ordini;
+		this.ingredienti = ingredienti;
 	}
 
-	public Prodotto(long id_prodotto, String nome, String descrizione, float prezzo, TipoProdotto tipo) {
+	public Prodotto(long id_prodotto, String nome, String descrizione, float prezzo, TipoProdotto tipo, Set<Ordine> ordini, Set<Ingrediente> ingredienti) {
 		super();
 		this.id_prodotto = id_prodotto;
 		this.nome = nome;
 		this.descrizione = descrizione;
 		this.prezzo = prezzo;
 		this.tipo = tipo;
+		this.ordini = ordini;
+		this.ingredienti = ingredienti;
 	}
 
 	public long getId_prodotto() {
@@ -90,6 +103,24 @@ public class Prodotto {
 
 	public void setTipo(TipoProdotto tipo) {
 		this.tipo = tipo;
+	}
+	
+	
+
+	public Set<Ordine> getOrdini() {
+		return ordini;
+	}
+
+	public void setOrdini(Set<Ordine> ordini) {
+		this.ordini = ordini;
+	}
+
+	public Set<Ingrediente> getIngredienti() {
+		return ingredienti;
+	}
+
+	public void setIngredienti(Set<Ingrediente> ingredienti) {
+		this.ingredienti = ingredienti;
 	}
 
 	@Override

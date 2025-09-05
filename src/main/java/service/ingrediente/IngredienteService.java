@@ -46,14 +46,29 @@ public class IngredienteService implements IIngredienteService{
 
 	@Override
 	public Ingrediente update(Ingrediente entity) {
-		// TODO Auto-generated method stub
-		return null;
+		Ingrediente updated = null;
+		if(entity.getId_ingrediente() != null) {
+			try {
+				this.entityManager.getTransaction().begin();
+				updated = this.ingredienteDao.merge(entity);
+				this.entityManager.getTransaction().commit();
+			}catch(Exception e) {
+				this.entityManager.getTransaction().rollback();
+				e.printStackTrace();
+			}
+		}
+		return updated;
 	}
 
 	@Override
 	public void delete(Ingrediente entity) {
-		// TODO Auto-generated method stub
-		
+		try {
+			this.entityManager.getTransaction().begin();
+			this.ingredienteDao.remove(entity);
+			this.entityManager.getTransaction().
+		}catch(Exception e) {
+			this.entityManager.getTransaction().rollback();
+		}
 	}
 
 }
