@@ -58,7 +58,7 @@ public class Utente {
 	}
 
 
-	public Utente(long id_utente, String nome, String cognome, String email, String password, RuoloUtente ruolo, List<Ordine> ordini) {
+	public Utente(Long id_utente, String nome, String cognome, String email, String password, RuoloUtente ruolo, List<Ordine> ordini) {
 		super();
 		this.id_utente = id_utente;
 		this.nome = nome;

@@ -18,7 +18,7 @@ public class OrdineProdotto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_ordine_prodotto")
-	private long id_ordine_prodotto;
+	private Long id_ordine_prodotto;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_ordine")
@@ -42,7 +42,7 @@ public class OrdineProdotto {
 		this.quantita_prodotto = quantita_prodotto;
 	}
 
-	public OrdineProdotto(long id_ordine_prodotto, Ordine ordine, Prodotto prodotto, int quantita_prodotto) {
+	public OrdineProdotto(Long id_ordine_prodotto, Ordine ordine, Prodotto prodotto, int quantita_prodotto) {
 		super();
 		this.id_ordine_prodotto = id_ordine_prodotto;
 		this.ordine = ordine;
@@ -50,11 +50,11 @@ public class OrdineProdotto {
 		this.quantita_prodotto = quantita_prodotto;
 	}
 
-	public long getId_ordine_prodotto() {
+	public Long getId_ordine_prodotto() {
 		return id_ordine_prodotto;
 	}
 
-	public void setId_ordine_prodotto(long id_ordine_prodotto) {
+	public void setId_ordine_prodotto(Long id_ordine_prodotto) {
 		this.id_ordine_prodotto = id_ordine_prodotto;
 	}
 

@@ -17,7 +17,7 @@ public class ProdottoIngrediente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_prodotto_ingrediente")
-	private long id_prodotto_ingrediente;
+	private Long id_prodotto_ingrediente;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_prodotto")
@@ -43,7 +43,7 @@ public class ProdottoIngrediente {
 		this.quantita_ingrediente = quantita_ingrediente;
 	}
 
-	public ProdottoIngrediente(long id_prodotto_ingrediente, Prodotto prodotto, Ingrediente ingrediente,
+	public ProdottoIngrediente(Long id_prodotto_ingrediente, Prodotto prodotto, Ingrediente ingrediente,
 			int quantita_ingrediente) {
 		super();
 		this.id_prodotto_ingrediente = id_prodotto_ingrediente;
@@ -52,11 +52,11 @@ public class ProdottoIngrediente {
 		this.quantita_ingrediente = quantita_ingrediente;
 	}
 
-	public long getId_prodotto_ingrediente() {
+	public Long getId_prodotto_ingrediente() {
 		return id_prodotto_ingrediente;
 	}
 
-	public void setId_prodotto_ingrediente(long id_prodotto_ingrediente) {
+	public void setId_prodotto_ingrediente(Long id_prodotto_ingrediente) {
 		this.id_prodotto_ingrediente = id_prodotto_ingrediente;
 	}
 

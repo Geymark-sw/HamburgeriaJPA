@@ -5,7 +5,6 @@ import java.util.List;
 import dao.ingrediente.IIngredienteDao;
 import jakarta.persistence.EntityManager;
 import model.Ingrediente;
-import service.IBaseService;
 
 public class IngredienteService implements IIngredienteService{
 	
@@ -65,7 +64,7 @@ public class IngredienteService implements IIngredienteService{
 		try {
 			this.entityManager.getTransaction().begin();
 			this.ingredienteDao.remove(entity);
-			this.entityManager.getTransaction().
+			this.entityManager.getTransaction().commit();
 		}catch(Exception e) {
 			this.entityManager.getTransaction().rollback();
 		}

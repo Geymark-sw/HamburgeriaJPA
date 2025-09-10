@@ -18,7 +18,7 @@ public class Prodotto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_prodotto")
-	private long id_prodotto;
+	private Long id_prodotto;
 	
 	@Column(name = "nome")
 	private String nome;
@@ -54,7 +54,7 @@ public class Prodotto {
 		this.ingredienti = ingredienti;
 	}
 
-	public Prodotto(long id_prodotto, String nome, String descrizione, float prezzo, TipoProdotto tipo, Set<Ordine> ordini, Set<Ingrediente> ingredienti) {
+	public Prodotto(Long id_prodotto, String nome, String descrizione, float prezzo, TipoProdotto tipo, Set<Ordine> ordini, Set<Ingrediente> ingredienti) {
 		super();
 		this.id_prodotto = id_prodotto;
 		this.nome = nome;
@@ -65,11 +65,11 @@ public class Prodotto {
 		this.ingredienti = ingredienti;
 	}
 
-	public long getId_prodotto() {
+	public Long getId_prodotto() {
 		return id_prodotto;
 	}
 
-	public void setId_prodotto(long id_prodotto) {
+	public void setId_prodotto(Long id_prodotto) {
 		this.id_prodotto = id_prodotto;
 	}
 

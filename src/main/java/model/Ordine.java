@@ -24,7 +24,7 @@ public class Ordine {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_ordine")
-	private long id_ordine;
+	private Long id_ordine;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_utente")
@@ -57,7 +57,7 @@ public class Ordine {
 		this.totale = totale;
 	}
 
-	public Ordine(long id_ordine, Utente utente, LocalDateTime istante_ordine, StatoOrdine stato_ordine, float totale) {
+	public Ordine(Long id_ordine, Utente utente, LocalDateTime istante_ordine, StatoOrdine stato_ordine, float totale) {
 		super();
 		this.id_ordine = id_ordine;
 		this.utente = utente;
@@ -66,11 +66,11 @@ public class Ordine {
 		this.totale = totale;
 	}
 
-	public long getId_ordine() {
+	public Long getId_ordine() {
 		return id_ordine;
 	}
 
-	public void setId_ordine(long id_ordine) {
+	public void setId_ordine(Long id_ordine) {
 		this.id_ordine = id_ordine;
 	}
 
@@ -104,6 +104,16 @@ public class Ordine {
 
 	public void setTotale(float totale) {
 		this.totale = totale;
+	}
+	
+	
+
+	public Set<Prodotto> getProdotti() {
+		return prodotti;
+	}
+
+	public void setProdotti(Set<Prodotto> prodotti) {
+		this.prodotti = prodotti;
 	}
 
 	@Override

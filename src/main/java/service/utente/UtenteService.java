@@ -1,10 +1,15 @@
 package service.utente;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import dao.utente.IUtenteDao;
 import jakarta.persistence.EntityManager;
+import model.Ordine;
+import model.Prodotto;
 import model.Utente;
+import util.FunzioniUtils;
+import util.StatoOrdine;
 
 public class UtenteService implements IUtenteService{
 	
@@ -71,5 +76,17 @@ public class UtenteService implements IUtenteService{
 		}
 		
 	}
-
+	
+	public Ordine ordina(Utente utente) {
+		
+		//Stampa Menu
+		
+		List<Prodotto> prodotti = null;
+		
+		Ordine ordine = null;
+		ordine.setUtente(utente);
+		ordine.setIstante_ordine(LocalDateTime.now());
+		ordine.setStato_ordine(StatoOrdine.inpreparazione);
+		FunzioniUtils.selezionaProdotti();
+	}
 }
